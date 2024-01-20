@@ -1,0 +1,13 @@
+[
+    {"id": 1, "title": "Leche entera", "description": "Leche fresca entera, 1 litro", "price": 2.5, "thumbnail": "leche.jpg", "code": "LM124", "stock": 100},
+    {"id": 2, "title": "Pan integral", "description": "Pan integral, ideal para una dieta equilibrada", "price": 1.8, "thumbnail": "pan_integral.jpg", "code": "PI789", "stock": 150},
+    {"id": 3, "title": "Manzanas", "description": "Manzanas frescas, paquete de 6 unidades", "price": 4.0, "thumbnail": "manzanas.jpg", "code": "MA567", "stock": 80},
+    {"id": 4, "title": "Arroz blanco", "description": "Arroz blanco de grano largo, 1 kg", "price": 2.2, "thumbnail": "arroz.jpg", "code": "AB456", "stock": 120},
+    {"id": 5, "title": "Pasta de trigo integral", "description": "Pasta de trigo integral, paquete de 500g", "price": 1.5, "thumbnail": "pasta_integral.jpg", "code": "PTI234", "stock": 90},
+    {"id": 6, "title": "Atún enlatado", "description": "Atún enlatado al natural, lata de 200g", "price": 3.0, "thumbnail": "atun.jpg", "code": "ATN901", "stock": 110},
+    {"id": 7, "title": "Aceite de oliva virgen extra", "description": "Aceite de oliva virgen extra, botella de 500ml", "price": 5.5, "thumbnail": "aceite.jpg", "code": "AOVE789", "stock": 70},
+    {"id": 8, "title": "Yogur natural", "description": "Yogur natural sin azúcar, pack de 4 unidades", "price": 2.8, "thumbnail": "yogur.jpg", "code": "YN567", "stock": 100},
+    {"id": 9, "title": "Huevos frescos", "description": "Huevos frescos de corral, docena", "price": 2.0, "thumbnail": "huevos.jpg", "code": "HF345", "stock": 60},
+    {"id": 10, "title": "Cereal de avena", "description": "Cereal de avena integral, caja de 400g", "price": 3.5, "thumbnail": "avena.jpg", "code": "CA678", "stock": 80}
+  ]
+  
