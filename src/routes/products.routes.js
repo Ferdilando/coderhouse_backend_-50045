@@ -4,7 +4,7 @@ const fs = require('fs');
 const ProductManager = require("../controllers/product-manager");
 const productManager = new ProductManager("src/models/products.json")
 
-
+//solicitud GET para obtener todos los productos o un número limitado de productos
 router.get("/", async (req, res) => {
     try {
         const limit = req.query.limit;
@@ -23,6 +23,7 @@ router.get("/", async (req, res) => {
 
 })
 
+//solicitud GET para obtener un producto específico por su ID
 router.get("/:pid", async (req, res) => {
     try {
         const id = parseInt(req.params.pid)
@@ -37,6 +38,7 @@ router.get("/:pid", async (req, res) => {
     }
 })
 
+//solicitud POST para agregar un nuevo producto.
 router.post("/", async (req, res) => {
     const newProduct = req.body;
     try {
@@ -54,6 +56,7 @@ router.post("/", async (req, res) => {
 }
 )
 
+//solicitud PUT para actualizar un producto existente por su ID
 router.put("/:pid", async (req, res) => {
     const id = parseInt(req.params.pid)
     const newAtributes = req.body;
@@ -70,6 +73,7 @@ router.put("/:pid", async (req, res) => {
     }
 })
 
+//solicitud DELETE para eliminar un producto por su ID
 router.delete("/:pid", async (req, res) => {
     const id = parseInt(req.params.pid)
     try {

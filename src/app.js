@@ -3,10 +3,7 @@ const express = require("express");
 const app = express();
 const router = express.Router();
 const productsRouter = require("./routes/products.routes");
-const cartsRouter = require("./routes/carts.routes")
-//const fs = require("fs");
-//const exp = require("constants");
-
+const cartsRouter = require("./routes/carts.routes");
 
 // puerto al que se conectara
 const PUERTO = 8080;

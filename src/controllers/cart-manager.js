@@ -6,6 +6,7 @@ class CartManager {
         this.path = path;
     }
 
+    // Método para obtener la lista de carritos desde el archivo
     async getCart() {
         try {
             if (fs.existsSync(this.path)) {
@@ -19,6 +20,7 @@ class CartManager {
         }
     }
 
+    // Método para agregar un nuevo carrito a la lista
     async addCart(obj) {
         try {
             const carts = await this.getCart(); // Obtiene la lista actual de carritos
@@ -46,6 +48,7 @@ class CartManager {
         }
     }
 
+    // Método para obtener un carrito por su ID
     async getCartById(idCart) {
         try {
             const carts = await this.getCart(); // Obtiene la lista de carritos
@@ -58,13 +61,14 @@ class CartManager {
         } catch (error) {
             return error;
         }
-
     }
 
+    // Método para guardar la lista de carritos en el archivo
     async saveCart() {
-        await fs.writeFile(this.path, JSON.stringify(this.carts, null, 2))
+        await fs.writeFile(this.path, JSON.stringify(this.carts, null, 2));
     }
 
+    // Método para agregar un producto a un carrito específico
     async addProductToCart(cartId, productId, quantity = 1) {
         try {
             const carts = await this.getCart();
@@ -93,6 +97,5 @@ class CartManager {
         }
     }
 }
-
 
 module.exports = CartManager;

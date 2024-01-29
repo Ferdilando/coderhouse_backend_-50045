@@ -21,7 +21,6 @@ class ProductManager {
     }
 
     // Método para agregar un nuevo producto a la lista
-
     async addProduct(obj) {
         try {
             const productos = await this.getProduct(); // Obtiene la lista actual de productos
@@ -49,7 +48,6 @@ class ProductManager {
         }
     }
 
-
     // Método para obtener un producto por su ID
     async getProductById(idProducto) {
         try {
@@ -72,7 +70,6 @@ class ProductManager {
             const producto = await this.getProductById(idProducto); // Obtiene el producto 
 
             if (fs.existsSync(this.path)) {
-
                 // Actualiza los campos especificados en el producto
                 for (const campo in camposActualizados) {
                     if (camposActualizados.hasOwnProperty(campo)) {
@@ -94,6 +91,7 @@ class ProductManager {
         }
     }
 
+    // Método para eliminar un producto por su ID
     async deleteProduct(idProducto) {
         try {
             const productos = await this.getProduct(); // Obtiene la lista actual de productos
