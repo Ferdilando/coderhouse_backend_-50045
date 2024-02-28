@@ -3,11 +3,12 @@ const express = require("express");
 const app = express();
 const router = express.Router();
 const productsRouter = require("./routes/products.routes");
-const cartsRouter = require("./routes/carts.routes");
+//const cartsRouter = require("./routes/carts.routes");
 const viewsRoutes = require("./routes/views.routes")
 const realTimeProducts = require("./routes/views.routes")
 const exphbs = require("express-handlebars")
 const socket = require("socket.io");
+require ("./database.js")
 
 // puerto al que se conectara
 const PUERTO = 8080;
@@ -23,9 +24,9 @@ app.use(express.static('./src/public'));
 
 //routes
 app.use("/api/products", productsRouter);
-app.use("/api/carts", cartsRouter);
-app.use("/", viewsRoutes)
-app.use("/realTimeProducts", realTimeProducts )
+//app.use("/api/carts", cartsRouter);
+app.use("/", viewsRoutes);
+app.use("/realTimeProducts", realTimeProducts );
 
 // se inicia el servidor y se escucha el puerto indicado
 
@@ -34,8 +35,8 @@ const httpServer = app.listen(PUERTO, () => {
 })
 
 //////
-const ProductManager = require("./controllers/product-manager");
-const productManager = new ProductManager("src/models/products.json")
+const ProductManager = require("./controllers/product-manager-db");
+const productManager = new ProductManager()
 
 const io = socket(httpServer);
 

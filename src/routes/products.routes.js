@@ -1,8 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const fs = require('fs');
-const ProductManager = require("../controllers/product-manager");
-const productManager = new ProductManager("src/models/products.json")
+const ProductManager = require("../controllers/product-manager-db.js");
+const productManager = new ProductManager()
 
 //solicitud GET para obtener todos los productos o un número limitado de productos
 router.get("/", async (req, res) => {
@@ -26,7 +26,7 @@ router.get("/", async (req, res) => {
 //solicitud GET para obtener un producto específico por su ID
 router.get("/:pid", async (req, res) => {
     try {
-        const id = parseInt(req.params.pid)
+        const id = req.params.pid
         const productos = await productManager.getProduct();
         const producto = productos.find(producto => producto.id == id)
         res.json(producto)
@@ -58,7 +58,7 @@ router.post("/", async (req, res) => {
 
 //solicitud PUT para actualizar un producto existente por su ID
 router.put("/:pid", async (req, res) => {
-    const id = parseInt(req.params.pid)
+    const id = req.params.pid
     const newAtributes = req.body;
     try {
         await productManager.updateProduct(id, newAtributes)
@@ -75,7 +75,7 @@ router.put("/:pid", async (req, res) => {
 
 //solicitud DELETE para eliminar un producto por su ID
 router.delete("/:pid", async (req, res) => {
-    const id = parseInt(req.params.pid)
+    const id = req.params.pid
     try {
         await productManager.deleteProduct(id)
         res.status(201).json({

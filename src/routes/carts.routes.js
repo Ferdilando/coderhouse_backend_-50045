@@ -2,7 +2,7 @@
 const express = require("express");
 const router = express.Router();
 const fs = require('fs');
-const CartManager = require("../controllers/cart-manager");
+//const CartManager = require("../controllers/cart-manager-db.js");
 
 // Instancia del controlador de carritos
 const cartManager = new CartManager("src/models/carrito.json");

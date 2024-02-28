@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const fs = require('fs');
-const ProductManager = require("../controllers/product-manager");
+const ProductManager = require("../controllers/product-manager-db");
 const productManager = new ProductManager("src/models/products.json")
 
 //handlebars
