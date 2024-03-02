@@ -1,8 +1,6 @@
 
 const socket = io();
 
-socket.emit("hola", "hola server")
-
 socket.on("productos", (data) => {
     //console.log(data)
     renderProductos(data)
@@ -17,22 +15,22 @@ const renderProductos = (productos) => {
         card.classList.add("card")
 
         card.innerHTML = `
-                            <p> ${item.id} </P>
-                            <p> ${item.title} </P>
-                            <p> ${item.description} </P>
-                            <p> ${item.price} </P>
+                            <p> Producto: ${item.title} </P>
+                            <p> Descripcion: ${item.description} </P>
+                            <p> Precio: ${item.price} </P>
+                            <p> Stock: ${item.stock} </P>
                             <button> Eliminar </button>
         `
         contenedorProductos.appendChild(card)
 
         card.querySelector("button").addEventListener("click", () =>{
-            eliminarProducto(item.id)
+            eliminarProducto(item._id)
         })
     })
 }
 
-const eliminarProducto = (id) => {
-    socket.emit("eliminarProducto", id)
+const eliminarProducto = (_id) => {
+    socket.emit("eliminarProducto", _id)
 }
 
 document.getElementById("btnEnviar").addEventListener("click", () => {
@@ -45,6 +43,7 @@ const agregarProducto = () => {
         description: document.getElementById("description").value,
         price: document.getElementById("price").value,
         code: document.getElementById("code").value,
+        stock: document.getElementById("stock").value,
         category: document.getElementById("category").value,
     }
     socket.emit("agregarProducto", producto)

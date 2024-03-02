@@ -3,7 +3,7 @@ const ProductModel = require("../models/products.model.js")
 class ProductManager {
     async addProduct({ title, category, description, price, code, stock, status, thumbnails }) {
         try {
-            if (!title || !category || !description || !price || !code || !stock) {
+            if (!title || !category || !description || !price || !code || !stock ) {
                 console.log("Todos los campos son obligatorios")
                 return;
             }
@@ -28,7 +28,7 @@ class ProductManager {
             await nuevoProducto.save()
 
         } catch (error) {
-            console.log("Error al crear el producto")
+            console.log(error,"Error al crear el producto")
         }
     }
 

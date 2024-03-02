@@ -3,7 +3,7 @@ const express = require("express");
 const app = express();
 const router = express.Router();
 const productsRouter = require("./routes/products.routes");
-//const cartsRouter = require("./routes/carts.routes");
+const cartsRouter = require("./routes/carts.routes");
 const viewsRoutes = require("./routes/views.routes")
 const realTimeProducts = require("./routes/views.routes")
 const exphbs = require("express-handlebars")
@@ -24,7 +24,7 @@ app.use(express.static('./src/public'));
 
 //routes
 app.use("/api/products", productsRouter);
-//app.use("/api/carts", cartsRouter);
+app.use("/api/carts", cartsRouter);
 app.use("/", viewsRoutes);
 app.use("/realTimeProducts", realTimeProducts );
 
@@ -41,7 +41,7 @@ const productManager = new ProductManager()
 const io = socket(httpServer);
 
 io.on("connection", async (socket) => {
-    console.log("conectado")
+    console.log("conectadooo")
 
     socket.emit("productos", await productManager.getProduct())
 

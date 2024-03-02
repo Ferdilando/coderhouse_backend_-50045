@@ -2,10 +2,9 @@
 const express = require("express");
 const router = express.Router();
 const fs = require('fs');
-//const CartManager = require("../controllers/cart-manager-db.js");
+const CartManager = require("../controllers/cart-manager-db.js");
+const cartManager = new CartManager();
 
-// Instancia del controlador de carritos
-const cartManager = new CartManager("src/models/carrito.json");
 
 // Maneja la solicitud GET para obtener todos los carritos o un número limitado de carritos.
 router.get("/", async (req, res) => {
@@ -28,7 +27,7 @@ router.get("/", async (req, res) => {
 // Maneja la solicitud GET para obtener un carrito específico por su ID.
 router.get("/:cid", async (req, res) => {
     try {
-        const id = parseInt(req.params.cid);
+        const id = req.params.cid
         const carts = await cartManager.getCart();
         const cart = carts.find(cart => cart.id === id);
         res.json(cart);
@@ -58,7 +57,7 @@ router.post("/", async (req, res) => {
 
 // Maneja la solicitud POST para agregar un producto a un carrito específico.
 router.post("/:cid/product/:pid", async (req, res) => {
-    const cartId = parseInt(req.params.cid);
+    const cartId = req.params.cid
     const productId = req.params.pid;
     const quantity = req.body.quantity || 1;
 
