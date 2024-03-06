@@ -1,0 +1,102 @@
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+#contenedorProductos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #fff;
+    margin: 10px;
+    padding: 10px;
+    width: 200px;
+}
+
+#chatBox, #btnEnviar {
+    margin-top: 20px;
+}
+
+#messagesLogs {
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin-top: 20px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+form {
+    margin-top: 20px;
+}
+
+input, button {
+    margin-bottom: 10px;
+    padding: 8px;
+}
+
+button {
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.card p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #333;
+}
+
+.card button {
+    background-color: #ff5722; /* Cambia el color del botón dentro de la tarjeta */
+}
+.card p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #333;
+}
+
+.card button {
+    background-color: #ff5722; /* Cambia el color del botón dentro de la tarjeta */
+}
+
+/* Estilo para el texto específico dentro de las tarjetas de productos */
+.card p strong {
+    font-weight: bold; /* Hace el texto en negrita */
+    color: #2196F3; /* Cambia el color del nombre del atributo */
+}
+#productForm {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px; /* Ajusta el ancho máximo según sea necesario */
+}
+
+.form-group {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    padding: 8px;
+    margin: 5px 0;
+}

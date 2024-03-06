@@ -34,8 +34,8 @@ class ProductManager {
 
     async getProduct(){
         try {
-            const prodcutos = await ProductModel.find()
-            return prodcutos;
+            const productos = await ProductModel.find()
+            return productos;
         } catch (error) {
             console.log("No se pudo recuperar los productos")
         }

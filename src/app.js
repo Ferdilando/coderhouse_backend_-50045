@@ -40,6 +40,8 @@ const productManager = new ProductManager()
 
 const io = socket(httpServer);
 
+let messages = []
+
 io.on("connection", async (socket) => {
     console.log("conectadooo")
 
@@ -52,6 +54,15 @@ io.on("connection", async (socket) => {
     socket.on("agregarProducto", async (producto) => {
         await productManager.addProduct(producto)
     })
+})
 
+io.on("connection", (socket) =>{
+    socket.on("hola", (data)=>{
+        console.log(data)
+    })
+    socket.on("message", data => {
+        messages.push(data)
+        io.emit("messagesLogs", messages)
+    })
 })
 
