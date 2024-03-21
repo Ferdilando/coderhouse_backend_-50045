@@ -6,7 +6,7 @@ socket.on("productos", (data) => {
     renderProductos(data)
 })
 
-let user
+/* let user
 const chatBox = document.getElementById("chatBox")
 Swal.fire({
     title: "Tu nombre?",
@@ -38,7 +38,9 @@ socket.on("messagesLogs", (data) => {
         mensajes = mensajes + `${mensaje.user} dice: ${mensaje.message}<br>`
     })
     log.innerHTML = mensajes
-})
+}) */
+
+
 
 const renderProductos = (productos) => {
     const contenedorProductos = document.getElementById("contenedorProductos");

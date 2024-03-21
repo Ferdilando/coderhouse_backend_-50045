@@ -80,23 +80,3 @@ button:hover {
     font-weight: bold; /* Hace el texto en negrita */
     color: #2196F3; /* Cambia el color del nombre del atributo */
 }
-#productForm {
-    display: flex;
-    flex-direction: column;
-    max-width: 300px; /* Ajusta el ancho máximo según sea necesario */
-}
-
-.form-group {
-    margin-bottom: 10px;
-    display: flex;
-    flex-direction: column;
-}
-
-.form-group label {
-    margin-bottom: 5px;
-}
-
-.form-group input {
-    padding: 8px;
-    margin: 5px 0;
-}
